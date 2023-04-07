@@ -15,13 +15,17 @@
 
     <?php
     if (isset($_POST['submit'])) {
-        $celsius = $_POST['celsius'];
-        $fahrenheit = ($celsius * 9 / 5) + 32;
-        $kelvin = $celsius + 273.15;
-        echo "<br>";
-        echo "Hasil Konversi:<br>";
-        echo "Celsius ke Fahrenheit: " . $fahrenheit . " °F<br>";
-        echo "Celsius ke Kelvin: " . $kelvin . " K";
+        $suhu = $_POST['suhu'];
+        $satuan = $_POST['satuan'];
+        if ($satuan == 'fahrenheit') {
+            $hasil = ($suhu * 9 / 5) + 32;
+            echo "<p class='hasil'>" . $suhu . " °C = " . $hasil . " °F</p>";
+        } elseif ($satuan == 'kelvin') {
+            $hasil = $suhu + 273.15;
+            echo "<p class='hasil'>" . $suhu . " °C = " . $hasil . " K</p>";
+        } else {
+            echo "<p class='hasil'>" . $suhu . " °C = " . $suhu . " °C</p>";
+        }
     }
     ?>
 </body>
