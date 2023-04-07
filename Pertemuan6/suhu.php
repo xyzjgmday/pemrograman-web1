@@ -27,12 +27,12 @@
             $satuan = $_POST['satuan'];
             if ($satuan == 'fahrenheit') {
                 $hasil = ($suhu * 9 / 5) + 32;
-                echo "<p class='hasil'>" . $suhu . " °C = " . $hasil . " °F</p>";
+                echo "Hasil Konversi ke Farenheit adalah<p class='hasil'>" . $suhu . " °C = " . $hasil . " °F</p>";
             } elseif ($satuan == 'kelvin') {
                 $hasil = $suhu + 273.15;
-                echo "<p class='hasil'>" . $suhu . " °C = " . $hasil . " K</p>";
+                echo "Hasil Konversi ke Kelvin Adalah<p class='hasil'>" . $suhu . " °C = " . $hasil . " K</p>";
             } else {
-                echo "<p class='hasil'>" . $suhu . " °C = " . $suhu . " °C</p>";
+                echo "Tidak ada penkorvesrsian <p class='hasil'>" . $suhu . " °C = " . $suhu . " °C</p>";
             }
         }
         ?>
