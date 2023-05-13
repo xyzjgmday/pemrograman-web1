@@ -1,5 +1,8 @@
-.body {
-  background-color: #fcd705f8;
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  background: linear-gradient(#30142b, #a12727);
 }
 
 .card {
@@ -8,7 +11,7 @@
 }
 
 .card-header {
-  background-color: #007bff;
+  background-color: #fcd705f8;
   color: #fff;
   text-align: center;
   font-size: 24px;
@@ -21,8 +24,8 @@
 }
 
 .btn-primary:hover {
-  background-color: #0069d9;
-  border-color: #0062cc;
+  background-color: #05fc11f8;
+  border-color: #05fc11f8;
 }
 
 .btn-login:hover {

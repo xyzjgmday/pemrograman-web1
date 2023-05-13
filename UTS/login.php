@@ -25,16 +25,16 @@ if (isset($_GET['logout']) && $_GET['logout'] === 'true') {
 <html>
 
 <head>
-    <title>Halaman Index</title>
+    <title>Yeay Berhasil</title>
     <!-- CSS Bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
     <div class="container mt-5">
         <p>Login Berhasil!</p>
-        <h3>Selamat datang di halaman Index</h3>
+        <h3>Selamat datang kembali</h3>
         <a href="?logout=true" class="btn btn-danger">Logout</a>
     </div>
 
