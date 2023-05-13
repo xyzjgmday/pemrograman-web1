@@ -1,25 +1,30 @@
 <?php
 session_start();
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    // Validasi login
+// cek apakah form login sudah di-submit
+if (isset($_POST['submit'])) {
+
+    // simpan email dan password dari form login ke dalam variabel
     $email = $_POST['email'];
     $password = $_POST['password'];
 
-    // Proses validasi login, contoh sederhana dengan data hard-coded
-    if ($email == 'user@example.com' && $password == 'password') {
-        // Login berhasil
-        $_SESSION['email'] = $email;
-        header('Location: success.php');
-        exit();
-    } else {
-        // Cek apakah email terdaftar di sistem
-        if ($email != 'user@example.com') {
-            $_SESSION['error'] = 'Email not registered';
-        } else {
-            $_SESSION['error'] = 'Invalid password';
-        }
-        header('Location: index.php');
-        exit();
+    // lakukan pengecekan ke database untuk memastikan email dan password yang dimasukkan benar
+    // kode untuk pengecekan ke database di sini
+
+    // jika email ditemukan dan password sesuai, redirect ke halaman dashboard
+    if ($email == "daysubhiz@gmail.com" && $password == "password123") {
+        $_SESSION['login'] = true;
+        header("location: dashboard.php");
+        exit;
+    }
+
+    // jika email tidak ditemukan, tampilkan pesan error
+    else if ($email != "contoh@email.com"){
+        $error = "Email tidak ditemukan";
+    }
+
+    // jika password salah, tampilkan pesan error
+    else {
+        $error = "Password salah";
     }
 }
