@@ -1,28 +1,47 @@
 <?php
+// Mulai sesi
 session_start();
 
-// cek apakah form login sudah di-submit
-if (isset($_POST['submit'])) {
-
-    // simpan email dan password dari form login ke dalam variabel
-    $email = $_POST['email'];
-    $password = $_POST['password'];
-
-
-    // jika email ditemukan dan password sesuai, redirect ke halaman dashboard
-    if ($email == "daysubhiz@gmail.com" && $password == "password123") {
-        $_SESSION['login'] = true;
-        header("location: home.php");
-        exit;
-    }
-
-    // jika email tidak ditemukan, tampilkan pesan error
-    else if ($email != "contoh@email.com") {
-        $error = "Email tidak ditemukan";
-    }
-
-    // jika password salah, tampilkan pesan error
-    else {
-        $error = "Password salah";
-    }
+// login
+// Jika sudah akan diarahkan ke halaman index
+if (!isset($_SESSION['loggedIn']) || $_SESSION['loggedIn'] !== true) {
+    // Jika belum, pengguna diarahkan ke halaman login
+    header('Location: index.php');
+    exit;
 }
+
+// logout
+if (isset($_GET['logout']) && $_GET['logout'] === 'true') {
+    // Hapus session dan diarahkan ke halaman login
+    session_unset();
+    session_destroy();
+    header('Location: index.php');
+    exit;
+}
+?>
+
+<!-- Halaman setelah login -->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Halaman Index</title>
+    <!-- CSS Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+</head>
+
+<body>
+    <div class="container mt-5">
+        <p>Login Berhasil!</p>
+        <h3>Selamat datang di halaman Index</h3>
+        <a href="?logout=true" class="btn btn-danger">Logout</a>
+    </div>
+
+    <!-- JavaScript Bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+
+</html>

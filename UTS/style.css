@@ -1,0 +1,30 @@
+.body {
+  background-color: #fcd705f8;
+}
+
+.card {
+  margin-top: 100px;
+  border-radius: 10px;
+}
+
+.card-header {
+  background-color: #007bff;
+  color: #fff;
+  text-align: center;
+  font-size: 24px;
+  border-radius: 10px 10px 0 0;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+.btn-primary:hover {
+  background-color: #0069d9;
+  border-color: #0062cc;
+}
+
+.btn-login:hover {
+  transform: scale(1.1);
+}
