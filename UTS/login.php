@@ -1,22 +1,25 @@
 <?php
 session_start();
 
-// Check if the email and password are correct
-if ($_POST['email'] == 'admin@example.com' && $_POST['password'] == 'password') {
-    // Set the user as logged in and store the email in the session
-    $_SESSION['is_logged_in'] = true;
-    $_SESSION['user_email'] = $_POST['email'];
-    // Redirect to the home page
-    header('Location: home.php');
-    exit();
-} else {
-    // Set the login error based on the type of error
-    if ($_POST['email'] != 'admin@example.com') {
-        $_SESSION['login_error'] = 'email_not_found';
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    // Validasi login
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+
+    // Proses validasi login, contoh sederhana dengan data hard-coded
+    if ($email == 'user@example.com' && $password == 'password') {
+        // Login berhasil
+        $_SESSION['email'] = $email;
+        header('Location: success.php');
+        exit();
     } else {
-        $_SESSION['login_error'] = 'password_wrong';
+        // Cek apakah email terdaftar di sistem
+        if ($email != 'user@example.com') {
+            $_SESSION['error'] = 'Email not registered';
+        } else {
+            $_SESSION['error'] = 'Invalid password';
+        }
+        header('Location: index.php');
+        exit();
     }
-    // Redirect back to the login page
-    header('Location: index.php');
-    exit();
 }

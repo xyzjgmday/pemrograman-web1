@@ -13,16 +13,16 @@
         <div class="row justify-content-center">
             <div class="col-md-6">
                 <h1 class="text-center mt-5 mb-4">Login Form</h1>
-                <?php if(isset($_SESSION['login_error'])): ?>
-                <?php if($_SESSION['login_error'] == 'email_not_found'): ?>
-                <div class="alert alert-danger" role="alert">
-                    Email not found.
-                </div>
-                <?php elseif($_SESSION['login_error'] == 'password_wrong'): ?>
-                <div class="alert alert-danger" role="alert">
-                    Incorrect password.
-                </div>
-                <?php endif; ?>
+                <?php if (isset($_SESSION['login_error'])) : ?>
+                    <?php if ($_SESSION['login_error'] == 'email_not_found') : ?>
+                        <div class="alert alert-danger" role="alert">
+                            Email not found.
+                        </div>
+                    <?php elseif ($_SESSION['login_error'] == 'password_wrong') : ?>
+                        <div class="alert alert-danger" role="alert">
+                            Incorrect password.
+                        </div>
+                    <?php endif; ?>
                 <?php endif; ?>
                 <form action="login.php" method="post">
                     <div class="form-group">
@@ -31,13 +31,19 @@
                     </div>
                     <div class="form-group">
                         <label for="password">Password</label>
-                        <input type="password" class="form-control" id="password" name="password"
-                            placeholder="Enter password">
+                        <input type="password" class="form-control" id="password" name="password" placeholder="Enter password">
                     </div>
                     <div class="form-group">
                         <button type="submit" class="btn btn-primary btn-block">Login</button>
                     </div>
                 </form>
+                <?php if (isset($_SESSION['login_error'])) : ?>
+                    <?php if ($_SESSION['login_error'] == 'email_password_wrong') : ?>
+                        <div class="alert alert-danger" role="alert">
+                            Incorrect email or password.
+                        </div>
+                    <?php endif; ?>
+                <?php endif; ?>
             </div>
         </div>
     </div>
