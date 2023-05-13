@@ -8,18 +8,16 @@ if (isset($_POST['submit'])) {
     $email = $_POST['email'];
     $password = $_POST['password'];
 
-    // lakukan pengecekan ke database untuk memastikan email dan password yang dimasukkan benar
-    // kode untuk pengecekan ke database di sini
 
     // jika email ditemukan dan password sesuai, redirect ke halaman dashboard
     if ($email == "daysubhiz@gmail.com" && $password == "password123") {
         $_SESSION['login'] = true;
-        header("location: dashboard.php");
+        header("location: home.php");
         exit;
     }
 
     // jika email tidak ditemukan, tampilkan pesan error
-    else if ($email != "contoh@email.com"){
+    else if ($email != "contoh@email.com") {
         $error = "Email tidak ditemukan";
     }
 
