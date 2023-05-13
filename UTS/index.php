@@ -13,6 +13,11 @@
         <div class="row justify-content-center">
             <div class="col-md-6">
                 <h1 class="text-center mt-5 mb-4">Login Form</h1>
+                <?php if (isset($_SESSION['login_error']) && $_SESSION['login_error'] == 'email_not_found') : ?>
+                    <div class="alert alert-danger" role="alert">
+                        Email not found.
+                    </div>
+                <?php endif; ?>
                 <form action="login.php" method="post">
                     <div class="form-group">
                         <label for="email">Email</label>
