@@ -80,7 +80,7 @@ $prodi = $result['prodi'];
     <div class="container">
         <h1 class="mt-3" style="text-align: center;">Ubah Mahasiswa</h1>
         
-        <form action="save.php" method="POST">
+        <form action="update.php" method="POST">
             <div class="mb-3 row">
                 <label for="nim" class="col-sm-2 col-form-label">NIM</label>
                 <div class="col-sm-10">
