@@ -17,6 +17,7 @@ $prodi = $result['prodi'];
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -76,10 +77,11 @@ $prodi = $result['prodi'];
         }
     </style>
 </head>
+
 <body>
     <div class="container">
         <h1 class="mt-3" style="text-align: center;">Ubah Mahasiswa</h1>
-        
+
         <form action="update.php" method="POST">
             <div class="mb-3 row">
                 <label for="nim" class="col-sm-2 col-form-label">NIM</label>
@@ -98,9 +100,9 @@ $prodi = $result['prodi'];
                 <div class="col-sm-10">
                     <select class="form-control" name="periode" id="periode">
                         <?php
-                            $year = date('Y'); 
-                            for ($i=$year; $i > $year-5 ; $i--) { ?>
-                              <option value="<?= $i; ?>"  <?= $periode == $i ? 'selected' : ''; ?>> <?= $i; ?></option>  
+                        $year = date('Y');
+                        for ($i = $year; $i > $year - 5; $i--) { ?>
+                            <option value="<?= $i; ?>" <?= $periode == $i ? 'selected' : ''; ?>> <?= $i; ?></option>
                         <?php }  ?>
                     </select>
                 </div>
@@ -117,10 +119,11 @@ $prodi = $result['prodi'];
                     <input type="text" class="form-control" id="prodi" name="prodi" value="<?= $prodi; ?>">
                 </div>
             </div>
-    
+
             <button type="submit" class="btn btn-primary float-end">Simpan</button>
             <a href="index.php" class="btn btn-warning float-end me-2">Kembali</a>
         </form>
     </div>
 </body>
+
 </html>
