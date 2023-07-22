@@ -106,7 +106,7 @@ if (isset($_REQUEST['submit'])) {
                                         <?php
                                         $year = date('Y');
                                         for ($i = $year; $i > $year - 5; $i--) { ?>
-                                            <option value="<?= $i; ?>"><?= $i; ?></option>
+                                        <option value="<?= $i; ?>"><?= $i; ?></option>
                                         <?php } ?>
                                     </select>
                                 </div>
@@ -121,8 +121,8 @@ if (isset($_REQUEST['submit'])) {
                                         $query = mysqli_query($conn, $sql);
                                         while ($data = mysqli_fetch_array($query)) {
                                             ?>
-                                            <option value="<?= $data['ps_id'] ?>"><?= $data['program_studi'] ?> </option>
-                                            <?php
+                                        <option value="<?= $data['ps_id'] ?>"><?= $data['program_studi'] ?> </option>
+                                        <?php
                                         }
                                         ?>
                                     </select>
@@ -138,8 +138,8 @@ if (isset($_REQUEST['submit'])) {
                                         $query = mysqli_query($conn, $sql);
                                         while ($data = mysqli_fetch_array($query)) {
                                             ?>
-                                            <option value="<?= $data['id_kelas'] ?>"><?= $data['nama_kelas'] ?> </option>
-                                            <?php
+                                        <option value="<?= $data['id_kelas'] ?>"><?= $data['nama_kelas'] ?> </option>
+                                        <?php
                                         }
                                         ?>
                                     </select>
@@ -156,7 +156,7 @@ if (isset($_REQUEST['submit'])) {
                         </div>
                     </form>
                     <div class="footer">
-                        <p class="text-center small">© 2023 Hand-crafted & Made with D112121062</p>
+                        <p class="text-center small">© 2023 Hand-crafted & Made with D112121057</p>
                     </div>
                 </div>
             </div>
